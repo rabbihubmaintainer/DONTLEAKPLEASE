@@ -1,3 +1,5 @@
+-- fixed crashing on roblox bootstrappers (fishtrap, bloxstrap, frosttrap, etc)
+
 local success, isLoaded = pcall(function() return game:IsLoaded() end)
 if success and not isLoaded then
     game.Loaded:Wait()
