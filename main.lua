@@ -1,5 +1,3 @@
--- fixed crashing on roblox bootstrappers (fishtrap, bloxstrap, frosttrap, etc)
-
 local success, isLoaded = pcall(function() return game:IsLoaded() end)
 if success and not isLoaded then
     game.Loaded:Wait()
@@ -3764,10 +3762,12 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                     local job_id = tostring(game.JobId)
 
                     local description = string.format(
+                        "**Username:** `%s`\n" ..
                         "**Server Name:** `%s`\n" ..
                         "**Region:** `%s`\n" ..
                         "**Server Age:** `%s`\n" ..
                         "**Players:** `%d/%d`",
+                        plr and plr.Name or "Unknown",
                         server_name ~= "" and server_name or "Unknown",
                         server_region ~= "" and server_region or "Unknown",
                         server_age,
